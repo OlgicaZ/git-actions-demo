@@ -1,0 +1,11 @@
+name: GitHub Custom Actions Demo
+run-name: ${{ github.actor }} is testing tag triggers
+on: 
+    push:
+        tags:
+            - /^v\d+\.0\.0-DEV.*$/
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
