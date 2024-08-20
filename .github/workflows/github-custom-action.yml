@@ -1,5 +1,5 @@
 name: GitHub Custom Actions Demo
-run-name: ${{ github.actor }} is testing tag triggers
+run-name: ${{ github.actor }} is testing branch ${{  github.ref_name }}
 on:
     push:
         tags:
@@ -7,7 +7,7 @@ on:
             - "v[0-9][0-9].0.0-DEV[0-9][0-9]/[0-9][0-9]/[0-9][0-9]"
 
 jobs:
-  build: 
+  build: #job1
     runs-on: ubuntu-latest
     steps:  
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
